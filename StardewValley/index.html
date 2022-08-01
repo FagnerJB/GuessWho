@@ -21,8 +21,8 @@
          content="Play Guess Who? with Stardew Valley characters."
       />
       <meta property="og:type" content="website" />
-      <!-- <link href="../style.min.css?v=1" rel="stylesheet" /> -->
-      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="../style.min.css?v=3" rel="stylesheet" />
+      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
       <script>
          const characters = [
             { id: '02', name: 'Abigail', status: true },
@@ -71,6 +71,8 @@
             { id: '130', name: 'Willy', status: true },
             { id: '132', name: 'Wizard', status: true },
          ]
+
+         const resetGame = () => {}
       </script>
       <script src="https://unpkg.com/alpinejs" defer></script>
    </head>
@@ -79,7 +81,7 @@
       x-data="{list: JSON.parse(JSON.stringify(characters)), pick:'false', locked: false, remaining: characters.length}"
       x-effect="remaining = list.filter((c) => c.status).length"
    >
-      <header class="bg-slate-50 fixed top-0 z-10 w-full">
+      <header class="bg-slate-50 fixed top-0 z-20 w-full">
          <div class="container mx-auto py-3 flex">
             <div class="w-full">
                <h1
@@ -120,7 +122,7 @@
                   ></button>
                   <button
                      class="py-1 px-3 text-white rounded"
-                     x-on:click.prevent="list = JSON.parse(JSON.stringify(characters)); pick ='false'"
+                     x-on:click.prevent="window.confirm('Are you sure?') ? () => {list = JSON.parse(JSON.stringify(characters)); pick ='false'} : ''"
                      x-bind:disabled="locked"
                      x-bind:class="locked ? 'bg-slate-400/90' : 'bg-cyan-500/90'"
                   >
