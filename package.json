@@ -1,0 +1,13 @@
+{
+   "name": "guess-who",
+   "version": "1.0.0",
+   "main": "index.js",
+   "license": "MIT",
+   "scripts": {
+      "start": "tailwindcss -i ./dev.css -o ./style.min.css --minify"
+   },
+   "devDependencies": {
+      "tailwindcss": "^3.0.7",
+      "@tailwindcss/line-clamp": "^0.4.0"
+   }
+}
