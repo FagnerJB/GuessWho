@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+      <title>Guess Who?</title>
+      <meta name="title" content="Custom Guess Who?" />
+      <meta property="og:title" content="Custom Guess Who?" />
+      <meta property="twitter:title" content="Custom Guess Who?" />
+      <meta
+         name="description"
+         content="Play Guess Who? with different characters."
+      />
+      <meta
+         property="og:description"
+         content="Play Guess Who? with different characters."
+      />
+      <meta
+         property="twitter:description"
+         content="Play Guess Who? with different characters."
+      />
+      <meta property="og:type" content="website" />
+      <!-- <link href="../style.min.css?v=3" rel="stylesheet" /> -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="scripts.js" defer></script>
+      <script src="https://unpkg.com/alpinejs" defer></script>
+   </head>
+   <body
+      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 select-none"
+      x-data="game"
+   >
+      <header class="bg-slate-50 fixed top-0 z-20 w-full">
+         <div class="container mx-auto py-3 flex">
+            <div class="w-full">
+               <h1
+                  class="text-xl font-bold mb-2 hidden sm:block text-center"
+                  x-text="getTitle"
+               ></h1>
+               <div class="flex gap-2 items-center justify-center mb-2 text-lg">
+                  Your pick:
+                  <select
+                     class="font-bold bg-transparent"
+                     x-model="pickSelect"
+                     x-bind:disabled="locked"
+                     x-effect="updateGame"
+                  >
+                     <option value="-1">Choose or</option>
+                     <template x-for="(item, key) in list">
+                        <option x-bind:value="key" x-text="item.name"></option>
+                     </template>
+                  </select>
+                  <button
+                     class="py-1 px-3 text-white rounded"
+                     x-on:click="pickSelect = Math.floor(Math.random() * list.length)"
+                     x-bind:disabled="locked"
+                     x-bind:class="locked ? 'bg-slate-400/90' : 'bg-cyan-500/90'"
+                  >
+                     Random
+                  </button>
+               </div>
+               <div class="flex gap-2 items-center justify-center text-lg">
+                  <button
+                     class="py-1 px-3 text-white rounded"
+                     x-text="locked ? 'Unlock' : 'Lock'"
+                     x-on:click.prevent="locked = !locked"
+                     x-bind:disabled="!Object.keys(pick).length"
+                     x-bind:class="!Object.keys(pick).length ? 'bg-slate-400/90' : 'bg-cyan-500/90'"
+                  ></button>
+                  <button
+                     class="py-1 px-3 text-white rounded"
+                     x-on:click.prevent="window.confirm('Are you sure?') ? () => {list = JSON.parse(JSON.stringify(characters)); pick ='false'} : ''"
+                     x-bind:disabled="locked"
+                     x-bind:class="locked ? 'bg-slate-400/90' : 'bg-cyan-500/90'"
+                  >
+                     Restart
+                  </button>
+                  <div class="font-semibold">
+                     <span x-text="remaining"></span> remaining
+                  </div>
+               </div>
+            </div>
+            <div class="justify-self-end">
+               <template x-if="!Object.keys(pick).length">
+                  <div
+                     class="w-24 aspect-[149/193] flex justify-center items-center text-4xl text-slate-400 font-bold border-2 border-black rounded-sm mr-2"
+                  >
+                     ?
+                  </div>
+               </template>
+               <template x-if="Object.keys(pick).length">
+                  <img
+                     class="w-24 aspect-[149/193] mr-2 max-w-none"
+                     x-bind:src="`images/${set}/${pick.img}`"
+                     x-bind:alt="pick.name"
+                     x-bind:title="pick.name"
+                  />
+               </template>
+            </div>
+         </div>
+      </header>
+      <main class="container py-4 mx-auto mt-36">
+         <ul class="flex gap-3 flex-wrap justify-center">
+            <template x-for="(item, key) in list" x-bind:key="key">
+               <li>
+                  <a
+                     class="block relative"
+                     href="#"
+                     x-bind:title="item.name"
+                     x-on:click.prevent="toggleItemStatus(key)"
+                  >
+                     <div
+                        class="absolute inset-0 z-10"
+                        x-bind:class="getItemStatus(key) ? '' : 'bg-black/50'"
+                     ></div>
+                     <img
+                        class="pointer-events-none w-36 aspect-[149/193]"
+                        x-bind:class="getItemStatus(key) ? '' : 'grayscale'"
+                        x-bind:src="`images/${set}/${item.img}`"
+                        x-bind:alt="item.name"
+                     />
+                  </a>
+               </li>
+            </template>
+         </ul>
+      </main>
+   </body>
+</html>
