@@ -68,7 +68,7 @@
                   ></button>
                   <button
                      class="py-1 px-3 text-white rounded"
-                     x-on:click.prevent="window.confirm('Are you sure?') ? () => {list = JSON.parse(JSON.stringify(characters)); pick ='false'} : ''"
+                     x-on:click.prevent="restartGame"
                      x-bind:disabled="locked"
                      x-bind:class="locked ? 'bg-slate-400/90' : 'bg-cyan-500/90'"
                   >
