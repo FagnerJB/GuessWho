@@ -4,60 +4,76 @@ const characters = {
       key: 'craigOfTheCreek',
       showNames: true,
       list: [
-         { name: 'J.P.', img: 'JP.jpg' },
-         { name: '', img: 'Junk_lord.jpg' },
-         { name: '', img: 'Marie.jpg' },
-         { name: '', img: 'Maya.jpg' },
-         { name: '', img: 'Melissa.jpg' },
-         { name: '', img: 'Nicole.jpg' },
-         { name: '', img: 'Paintball_Benny.jpg' },
-         { name: '', img: 'Paintball_Mike.jpg' },
-         { name: '', img: 'Paula_Mercer.jpg' },
-         { name: '', img: 'Raj.jpg' },
-         { name: '', img: 'Sailor_Boy.jpg' },
-         { name: 'Rainha do Esgoto', img: 'SewerQueen.jpg' },
-         { name: '', img: 'Shawn.jpg' },
-         { name: '', img: 'Sparkle_Cadet.jpg' },
-         { name: '', img: 'Stacks.jpg' },
-         { name: 'Guardiã do Tempo', img: 'Timekeeper.jpg' },
-         { name: '', img: 'Todd.jpg' },
-         { name: '', img: 'Toman.jpg' },
-         { name: '', img: 'Tony.jpg' },
-         { name: '', img: 'Turnerbefore.jpg' },
-         { name: '', img: 'Warpspeed.jpg' },
-         { name: '', img: 'Wildernessa.jpg' },
-         { name: '', img: 'Wren.jpg' },
-         { name: '', img: 'Yustice.jpg' },
-         { name: '', img: 'Zatch.jpg' },
-         { name: '', img: 'Zoe.jpg' },
-         { name: '', img: 'Angel.jpg' },
-         { name: '', img: 'Angry-Jason.jpg' },
-         { name: 'Tia Kimmy', img: 'AuntKimmy.jpg' },
-         { name: '', img: 'Big_Red.jpg' },
+         { name: 'Angel', img: 'Angel.jpg' },
+         { name: 'Benny Paintball', img: 'Paintball_Benny.jpg' },
          { name: 'Bobby', img: 'Bobby.jpg' },
-         { name: 'Boris', img: 'Boris.jpg' },
-         { name: '', img: 'Brigid.jpg' },
-         { name: '', img: 'Bryson.jpg' },
          { name: 'Bola de Canhão', img: 'Cannonball.jpg' },
-         { name: '', img: 'Carter_Brown.jpg' },
+         { name: 'Boris', img: 'Boris.jpg' },
+         { name: 'Brigid', img: 'Brigid.jpg' },
+         { name: 'Bryson', img: 'Bryson.jpg' },
+         { name: 'Cadete Brilhante', img: 'Sparkle_Cadet.jpg' },
+         { name: 'Carter', img: 'Carter_Brown.jpg' },
          { name: 'Craig', img: 'Craig_Williams.jpg' },
          { name: 'Darnell', img: 'Darnell.jpg' },
          { name: 'Duane', img: 'Duane.jpg' },
-         { name: '', img: 'Eliza.jpg' },
-         { name: '', img: 'Faraday.jpg' },
-         { name: '', img: 'George.jpg' },
-         { name: '', img: 'Handlebarb.jpg' },
-         { name: '', img: 'Jane.jpg' },
-         { name: '', img: 'Jessica.jpg' },
-         { name: '', img: 'Jojo_Williams.jpg' },
-         { name: '', img: 'Kelsey.jpg' },
-         { name: '', img: 'Kelsey_Dad.jpg' },
-         { name: '', img: 'Kenneth_older.jpg' },
-         { name: '', img: 'King_Xavier.jpg' },
-         { name: '', img: 'Kit.jpg' },
-         { name: '', img: 'Laura.jpg' },
-         { name: '', img: 'MacKenzie.jpg' },
-         { name: '', img: 'Maney.jpg' },
+         { name: 'Eliza', img: 'Eliza.jpg' },
+         { name: 'Ferrugem', img: 'Big_Red.jpg' },
+         { name: 'Garoto Marinheiro', img: 'Sailor_Boy.jpg' },
+         { name: 'George', img: 'George.jpg' },
+         { name: 'Guardiã do Tempo', img: 'Timekeeper.jpg' },
+         { name: 'Guido', img: 'Handlebarb.jpg' },
+         { name: 'J.P.', img: 'JP.jpg' },
+         { name: 'Jane', img: 'Jane.jpg' },
+         { name: 'Jason', img: 'Angry-Jason.jpg' },
+         { name: 'Jéssica', img: 'Jessica.jpg' },
+         { name: 'Kelsey', img: 'Kelsey.jpg' },
+         { name: 'Kit', img: 'Kit.jpg' },
+         { name: 'Laura', img: 'Laura.jpg' },
+         { name: 'MacKenzie', img: 'MacKenzie.jpg' },
+         { name: 'Maney', img: 'Maney.jpg' },
+         { name: 'Marie', img: 'Marie.jpg' },
+         { name: 'Maya', img: 'Maya.jpg' },
+         { name: 'Melissa', img: 'Melissa.jpg' },
+         { name: 'Mike Paintball', img: 'Paintball_Mike.jpg' },
+         { name: 'Nicole', img: 'Nicole.jpg' },
+         { name: 'Pai da Kelsey', img: 'Kelsey_Dad.jpg' },
+         { name: 'Paula', img: 'Paula_Mercer.jpg' },
+         { name: 'Rainha do Esgoto', img: 'SewerQueen.jpg' },
+         { name: 'Raj', img: 'Raj.jpg' },
+         { name: 'Rapidão', img: 'Warpspeed.jpg' },
+         { name: 'Rei do Lixo', img: 'Junk_lord.jpg' },
+         { name: 'Rei Xavier', img: 'King_Xavier.jpg' },
+         { name: 'Selvagenessa', img: 'Wildernessa.jpg' },
+         { name: 'Shawn', img: 'Shawn.jpg' },
+         { name: 'Stacks', img: 'Stacks.jpg' },
+         { name: 'Tia Kimmy', img: 'AuntKimmy.jpg' },
+         { name: 'Todd', img: 'Todd.jpg' },
+         { name: 'Toman', img: 'Toman.jpg' },
+         { name: 'Tony', img: 'Tony.jpg' },
+         { name: 'Turner', img: 'Turnerbefore.jpg' },
+         { name: 'Vovó Jojo', img: 'Jojo_Williams.jpg' },
+         { name: 'Wren', img: 'Wren.jpg' },
+         { name: 'Yustice', img: 'Yustice.jpg' },
+         { name: 'Zatch', img: 'Zatch.jpg' },
+         { name: 'Zoe', img: 'Zoe.jpg' },
+         // { name: '', img: 'Faraday.jpg' },
+         // { name: '', img: 'Kenneth_older.jpg' },
+         /**
+          * Poncho Verde (Omar)
+          * michele green
+          * bruxas do smotie
+          * Bernard
+          * Cris
+          * ancioes
+          * arbitro/juiz/padre
+          * Vovô
+          * Mark
+          * Frisboy
+          * Scuba
+          * Zoe
+          * The Elders of the Creek
+          *
+          */
       ],
    },
    stardewValley: {
@@ -115,17 +131,41 @@ document.addEventListener('alpine:init', () => {
       locked: false,
       remaining: -1,
       pickSelect: -1,
+      showModal: true,
 
       init() {
-         this.setList()
          window.onbeforeunload = () => 'Are you sure?'
          console.log('By https://fagnerjb.com')
+
+         if (!location.hash) {
+            return
+         }
+
+         let theHash = location.hash
+         if ('#set:' !== theHash.slice(0, 5)) {
+            return
+         }
+
+         let set = theHash.slice(5)
+         if (!Object.keys(characters).includes(set)) {
+            return
+         }
+
+         this.setList(set)
       },
 
-      setList() {
-         this.set = 'craigOfTheCreek'
-         this.list = JSON.parse(JSON.stringify(characters[this.set].list))
+      setList(set) {
+         this.set = set
+         this.showModal = false
+         location.hash = `#set:${this.set}`
+         setTimeout(() => (this.list = characters[this.set].list), 1)
+
          this.remaining = this.list.length
+         this.pick = {}
+         this.discarded = []
+         this.status = 'notStarted'
+         this.locked = false
+         this.pickSelect = -1
       },
 
       getTitle() {
@@ -143,12 +183,7 @@ document.addEventListener('alpine:init', () => {
             return
          }
 
-         this.setList()
-         this.pick = {}
-         this.discarded = []
-         this.status = 'notStarted'
-         this.locked = false
-         this.pickSelect = -1
+         this.setList(this.set)
       },
 
       updateGame() {

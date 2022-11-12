@@ -20,8 +20,8 @@
          content="Play Guess Who? with different characters."
       />
       <meta property="og:type" content="website" />
-      <!-- <link href="../style.min.css?v=3" rel="stylesheet" /> -->
-      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="../style.min.css?v=3" rel="stylesheet" />
+      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
       <script src="scripts.js" defer></script>
       <script src="https://unpkg.com/alpinejs" defer></script>
    </head>
@@ -29,6 +29,26 @@
       class="bg-gradient-to-r from-violet-500 to-fuchsia-500 select-none"
       x-data="game"
    >
+      <template x-if="showModal">
+         <div
+            class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/80"
+         >
+            <div class="bg-white rounded py-3 px-4 text-center">
+               <div class="font-bold mb-3">Select a set:</div>
+               <ul class="flex flex-col gap-3">
+               <template x-for="key in Object.keys(characters)">
+                  <li>
+                  <button
+                  class="py-1 px-3 text-white rounded bg-cyan-500/90"
+                     x-text="characters[key].name"
+                     x-on:click="setList(key)"
+                  ></button>
+                  </li>
+               </template>
+            </div>
+         </div>
+      </template>
+
       <header class="bg-slate-50 fixed top-0 z-20 w-full">
          <div class="container mx-auto py-3 flex">
             <div class="w-full">
@@ -74,6 +94,14 @@
                   >
                      Restart
                   </button>
+                  <button
+                     class="py-1 px-3 text-white rounded"
+                     x-on:click.prevent="showModal = true"
+                     x-bind:disabled="locked"
+                     x-bind:class="locked ? 'bg-slate-400/90' : 'bg-cyan-500/90'"
+                  >
+                     Change set
+                  </button>
                   <div class="font-semibold">
                      <span x-text="remaining"></span> remaining
                   </div>
@@ -103,7 +131,7 @@
             <template x-for="(item, key) in list" x-bind:key="key">
                <li>
                   <a
-                     class="block relative"
+                     class="block relative w-36"
                      href="#"
                      x-bind:title="item.name"
                      x-on:click.prevent="toggleItemStatus(key)"
@@ -115,9 +143,15 @@
                      <img
                         class="pointer-events-none w-36 aspect-[149/193]"
                         x-bind:class="getItemStatus(key) ? '' : 'grayscale'"
-                        x-bind:src="`images/${set}/${item.img}`"
                         x-bind:alt="item.name"
+                        x-bind:src="`images/${set}/${item.img}`"
                      />
+                     <template x-if="characters[set].showNames">
+                        <div
+                           class="bg-neutral-600 py-1 px-2 text-center text-white font-bold  truncate w-full"
+                           x-text="item.name"
+                        ></div>
+                     </template>
                   </a>
                </li>
             </template>
