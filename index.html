@@ -7,8 +7,8 @@
    <meta name="title" content="Custom Guess Who?" />
    <meta name="description" content="Play Guess Who? with different characters." />
    <meta property="og:type" content="website" />
-   <link href="/GuessWho/assets/style.min.css" rel="stylesheet" />
-   <script src="/GuessWho/assets/scripts.js" defer></script>
+   <link href="assets/style.min.css" rel="stylesheet" />
+   <script src="assets/scripts.js" defer></script>
    <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 <body x-data="game" class="bg-gradient-to-r from-violet-500 to-fuchsia-500 select-none">
@@ -73,7 +73,7 @@
             </template>
             <template x-if="Object.keys(pick).length">
                <img class="w-24 aspect-[149/193] mr-2 max-w-none"
-                    x-bind:src="`GuessWho/assets/images/${set}/${pick.img}`" x-bind:alt="pick.name"
+                    x-bind:src="`assets/images/${set}/${pick.img}`" x-bind:alt="pick.name"
                     x-bind:title="pick.name" />
             </template>
          </div>
@@ -88,7 +88,7 @@
                   <div class="absolute inset-0 z-10" x-bind:class="getItemStatus(key) ? '' : 'bg-black/50'"></div>
                   <img class="pointer-events-none w-36 aspect-[149/193]"
                        x-bind:class="getItemStatus(key) ? '' : 'grayscale'" x-bind:alt="item.name"
-                       x-bind:src="`images/${set}/${item.img}`" />
+                       x-bind:src="`assets/images/${set}/${item.img}`" />
                   <template x-if="characters[set].showNames">
                      <div class="bg-neutral-600 py-1 px-2 text-center text-white font-bold  truncate w-full"
                           x-text="item.name"></div>
