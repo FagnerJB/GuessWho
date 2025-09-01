@@ -6,7 +6,7 @@
    "scripts": {
       "start": "concurrently -n \"JS,CSS\" \"nodemon\" \"npm run css -- --watch\"",
       "build": "npm run css -- --minify && npm run js -- --mode=production",
-      "css": "npx @tailwindcss/cli -i ./src/dev.css -o ./public/assets/style.min.css",
+      "css": "npx @tailwindcss/cli -i ./src/dev.css -o ./assets/style.min.css",
       "js": "webpack"
    },
    "devDependencies": {

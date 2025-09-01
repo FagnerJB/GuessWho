@@ -3,5 +3,5 @@
    "exec": "npm run js -- --mode=development",
    "stdin": false,
    "watch": ["src"],
-   "ignore": ["node_modules", "public"]
+   "ignore": ["node_modules", "assets"]
 }

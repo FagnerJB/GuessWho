@@ -47,7 +47,7 @@ export default class Codenames extends HTMLElement {
             <div class="backdrop absolute inset-0 z-1"></div>
             <img class="pointer-events-none w-36 aspect-[149/193] object-cover"
                   x-bind:alt="item.name"
-                  x-bind:src="\`images/\${$store.game.set}/\${item.img}\`" />
+                  x-bind:src="\`assets/images/\${$store.game.set}/\${item.img}\`" />
             <div x-show="$store.game.characters[$store.game.set].showNames" class="name bg-neutral-500 pt-1 px-2 text-center font-semibold text-base line-clamp-1 tracking-tighter w-full" x-text="item.name"></div>
          </button>
       </li>

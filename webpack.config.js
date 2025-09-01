@@ -4,6 +4,6 @@ module.exports = {
    entry: './src/index.js',
    output: {
       filename: 'scripts.min.js',
-      path: path.resolve(__dirname, 'public', 'assets'),
+      path: path.resolve(__dirname, 'assets'),
    },
 }

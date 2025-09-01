@@ -47,7 +47,7 @@ export default class GuessWho extends HTMLElement {
       </template>
       <template x-if="Object.keys(pick).length">
          <img class="w-24 aspect-[149/193] mr-2 max-w-none"
-               x-bind:src="\`images/\${$store.game.set}/\${pick.img}\`" x-bind:alt="pick.name"
+               x-bind:src="\`assets/images/\${$store.game.set}/\${pick.img}\`" x-bind:alt="pick.name"
                x-bind:title="pick.name" />
       </template>
    </div>
@@ -62,7 +62,7 @@ export default class GuessWho extends HTMLElement {
             <div class="absolute inset-0 z-1" x-bind:class="getItemStatus(key) ? '' : 'bg-black/50'"></div>
             <img class="pointer-events-none w-36 aspect-[149/193]"
                   x-bind:class="getItemStatus(key) ? '' : 'grayscale'" x-bind:alt="item.name"
-                  x-bind:src="\`images/\${$store.game.set}/\${item.img}\`" />
+                  x-bind:src="\`assets/images/\${$store.game.set}/\${item.img}\`" />
             <template x-if="$store.game.characters[$store.game.set].showNames">
                <div class="bg-neutral-600 py-1 px-2 text-center text-white font-bold  truncate w-full"
                      x-text="item.name"></div>
