@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width" />
+   <title>Guessing Games</title>
+   <meta name="title" content="Guessing Games: Guess Who? and Codenames" />
+   <meta name="description" content="Play Guess Who? and Codenames with different characters." />
+   <meta property="og:type" content="website" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+         rel="stylesheet">
+   <link href="assets/style.min.css" rel="stylesheet" />
+   <script src="assets/scripts.min.js" defer></script>
+</head>
+<body x-data="global"
+      class="font-sans text-xl text-zinc-50 bg-gradient-to-r from-violet-900 to-fuchsia-900 select-none">
+   <div class="m-1 p-2 rounded bg-black/40">
+      <template x-if="$store.game.current === 'menu'">
+         <gg-menu></gg-menu>
+      </template>
+      <template x-if="$store.game.current === 'guessWho'">
+         <gg-guesswho x-data="guessWho"></gg-guesswho>
+      </template>
+      <template x-if="$store.game.current === 'codenames'">
+         <gg-codenames x-data="codenames"></gg-codenames>
+      </template>
+   </div>
+   <dialog id="sets" class="m-auto rounded backdrop:bg-black/50" x-on:click.self="$store.game.closeSets">
+      <div class="bg-zinc-900 py-4 px-6 rounded text-center text-zinc-50">
+         <div class="font-bold mb-6">Select a set</div>
+         <ul class="flex flex-col gap-4">
+            <template x-for="key in Object.keys($store.game.characters)">
+               <li>
+                  <button class="w-full" x-text="$store.game.characters[key].name"
+                          x-on:click="$store.game.setList(key)"></button>
+               </li>
+            </template>
+         </ul>
+      </div>
+   </dialog>
+</body>
+</html>

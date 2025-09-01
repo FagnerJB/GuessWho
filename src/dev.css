@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+@theme {
+   --font-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      'Noto Color Emoji';
+}
+
+html,
+body,
+body > div {
+   min-height: calc(100dvh - var(--spacing) * 2);
+}
+
+[x-cloak] {
+   @apply hidden;
+}
+
+button {
+   @apply cursor-pointer;
+}
+
+button:not(.plain) {
+   @apply py-1.5 px-3.5 rounded bg-zinc-50 text-zinc-900 text-lg whitespace-nowrap disabled:cursor-not-allowed disabled:bg-zinc-400;
+}
+
+select {
+   @apply font-bold bg-transparent;
+}
+
+option {
+   @apply bg-zinc-800 text-zinc-200;
+}
+
+.blue {
+   @apply border-blue-600;
+
+   .name {
+      @apply bg-blue-600;
+   }
+
+   .backdrop {
+      @apply bg-blue-600/25;
+   }
+
+   &.reveal .backdrop {
+      @apply bg-blue-600/90;
+   }
+}
+
+.red {
+   @apply border-red-500;
+
+   .name {
+      @apply bg-red-500;
+   }
+
+   .backdrop {
+      @apply bg-red-500/25;
+   }
+
+   &.reveal .backdrop {
+      @apply bg-red-500/90;
+   }
+}
+
+.assassin {
+   @apply border-neutral-900;
+
+   .name {
+      @apply bg-neutral-900;
+   }
+
+   .backdrop {
+      @apply bg-neutral-900/25;
+   }
+
+   &.reveal .backdrop {
+      @apply bg-neutral-900/90;
+   }
+}
+
+.person {
+   @apply border-amber-100 text-zinc-700;
+
+   .name {
+      @apply bg-amber-100;
+   }
+
+   .backdrop {
+      @apply bg-amber-100/25;
+   }
+
+   &.reveal .backdrop {
+      @apply bg-amber-100/90;
+   }
+}
+
+.person,
+.assassin,
+.red,
+.blue {
+   &.reveal .backdrop,
+   .backdrop {
+      @apply hover:bg-transparent;
+   }
+}

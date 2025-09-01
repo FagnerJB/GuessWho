@@ -1,10 +1,14 @@
-# GuessWho
+# Guessing Games
 
-A custom _Guess Who?_ game, made with Tailwind and Alpine.js.
+Guessing Games made with Tailwind and Alpine.js, playable in
+[fagnerjb.github.io/GuessWho](https://fagnerjb.github.io/GuessWho/)
 
-Playable in [fagnerjb.github.io/GuessWho](https://fagnerjb.github.io/GuessWho/)
+## Games
 
-## Sets of characters:
+-  _Guess Who?_
+-  _Codenames_
 
--  Stardew Valley - © & TM ConcernedApe LLC
--  Craig of the Creek - © & TM Cartoon Network
+### Sets of characters from
+
+-  **Stardew Valley** - © & TM ConcernedApe LLC
+-  **Craig of the Creek** - © & TM Cartoon Network

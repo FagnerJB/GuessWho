@@ -1,16 +1,22 @@
 {
-   "name": "guess-who",
+   "name": "guessing-games",
    "version": "1.0.0",
    "main": "index.js",
    "license": "MIT",
    "scripts": {
-      "start": "tailwindcss -i ./dev.css -o ./assets/style.min.css --minify"
+      "start": "concurrently -n \"JS,CSS\" \"nodemon\" \"npm run css -- --watch\"",
+      "build": "npm run css -- --minify && npm run js -- --mode=production",
+      "css": "npx @tailwindcss/cli -i ./src/dev.css -o ./public/assets/style.min.css",
+      "js": "webpack"
    },
    "devDependencies": {
-      "@tailwindcss/line-clamp": "^0.4.0",
-      "tailwindcss": "^3.0.7"
-   },
-   "dependencies": {
-      "caniuse-lite": "^1.0.30001700"
+      "@tailwindcss/cli": "^4.1.12",
+      "alpinejs": "^3.14.9",
+      "concurrently": "^9.2.1",
+      "nodemon": "^3.1.10",
+      "random": "^5.4.1",
+      "tailwindcss": "^4.1.12",
+      "webpack": "^5.101.3",
+      "webpack-cli": "^6.0.1"
    }
 }
