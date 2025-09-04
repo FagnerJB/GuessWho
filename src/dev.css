@@ -21,7 +21,7 @@ button {
 }
 
 button:not(.plain) {
-   @apply py-1.5 px-3.5 rounded bg-zinc-50 text-zinc-900 text-lg whitespace-nowrap disabled:cursor-not-allowed disabled:bg-zinc-400;
+   @apply py-1.5 px-2 md:px-3.5 rounded bg-zinc-50 text-zinc-900 text-sm md:text-lg whitespace-nowrap disabled:cursor-not-allowed disabled:bg-zinc-400;
 }
 
 select {

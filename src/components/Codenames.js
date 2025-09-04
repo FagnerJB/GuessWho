@@ -10,7 +10,7 @@ export default class Codenames extends HTMLElement {
    <h1 class="text-xl font-bold mb-2 hidden sm:block text-center">Codenames</h1>
    <div class="grow">
       <div class="flex gap-2 items-center justify-center mb-2 text-lg">
-         <div class="flex flex-col gap-px">
+         <div class="flex flex-col">
             <span class="text-sm">Table hash:</span>
             <input name="seed" class="w-28 font-semibold" x-model="seed" readonly />
          </div>
@@ -31,7 +31,7 @@ export default class Codenames extends HTMLElement {
          </button>
          <button x-on:click.prevent="if(window.confirm('Are you sure?')){$store.game.current='menu'}" x-bind:disabled="locked">Back</button>
       </div>
-      <ul class="flex justify-center gap-3 font-semibold text-lg mt-3">
+      <ul class="flex justify-center gap-3 font-semibold text-sm md:text-lg mt-3">
          <li class="text-blue-500">Blue team: <span x-text="blueRemaining"></span> remaining</li>
          <li class="text-red-500">Red team: <span x-text="redRemaining"></span> remaining</li>
       </ul>
@@ -42,13 +42,13 @@ export default class Codenames extends HTMLElement {
 <ul class="grid grid-cols-5 gap-1">
    <template x-for="(item, key) in list" x-bind:key="key">
       <li>
-         <button class="plain relative border-4 border-transparent text-white" x-bind:title="item.name"
+         <button class="plain relative border-4 border-transparent w-full text-white" x-bind:title="item.name"
             x-on:click.prevent="toggleItemStatus(key)" x-bind:class="getItemStatus(key)">
             <div class="backdrop absolute inset-0 z-1"></div>
-            <img class="pointer-events-none w-36 aspect-[149/193] object-cover"
+            <img class="pointer-events-none aspect-[149/193] object-cover w-full h-auto"
                   x-bind:alt="item.name"
                   x-bind:src="\`assets/images/\${$store.game.set}/\${item.img}\`" />
-            <div x-show="$store.game.characters[$store.game.set].showNames" class="name bg-neutral-500 pt-1 px-2 text-center font-semibold text-base line-clamp-1 tracking-tighter w-full" x-text="item.name"></div>
+            <div class="name bg-neutral-500 pt-1 px-2 text-center font-semibold text-xs md:text-base line-clamp-1 tracking-tighter" x-show="$store.game.characters[$store.game.set].showNames" x-text="item.name"></div>
          </button>
       </li>
    </template>
